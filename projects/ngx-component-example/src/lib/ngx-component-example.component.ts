@@ -1,15 +1,15 @@
-import { Component } from '@angular/core';
+import { NgClass, NgStyle } from '@angular/common';
+import { Component, Input } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'ngx-ngx-component-example',
-  imports: [],
-  template: `
-    <p>
-      ngx-component-example works!
-    </p>
-  `,
-  styles: ``
+  selector: 'ngx-component-example',
+  imports: [FormsModule, NgClass, NgStyle],
+  templateUrl: './ngx-component-example.component.html',
+  styleUrls: ['./ngx-component-example.component.scss'],
+  standalone: true
 })
 export class NgxComponentExampleComponent {
-
+  @Input() isRtl: boolean = false;
+  @Input() exampleBackgroundColor: string = '#ffffff';
 }

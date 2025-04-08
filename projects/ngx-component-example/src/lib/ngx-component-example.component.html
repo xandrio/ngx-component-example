@@ -1,0 +1,57 @@
+<div class="ngx-component-example">
+
+    <div class="ngx-component-example-toolbar">
+
+        <div class="ngx-toolbar-title">
+            <button class="ngx-toolbar-expand-collapse">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+            <h2 class="ngx-toolbar-title-text">Base example</h2>
+        </div>
+
+        <div class="ngx-toolbar-actions">
+            <div class="ngx-toolbar-action ngx-toolbar-action-rtl">
+                <label class="ngx-toolbar-label">
+                     <span class="ngx-toolbar-label-text">
+                         <i class="ngx-icon ngx-icon-rtl"></i>
+                         RTL
+                     </span>
+                     <input class="ngx-component-example-checkbox" type="checkbox" name="rtl" [(ngModel)]="isRtl" />
+                 </label>
+             </div>
+             <div class="ngx-toolbar-action ngx-toolbar-action-theme">
+                 <label class="ngx-toolbar-label">
+                     <span  class="ngx-toolbar-label-text">
+                         <i class="ngx-icon ngx-icon-theme"></i>
+                         Theme
+                     </span>
+                     <select class="ngx-component-example-select" name="theme">
+                         <option value="Default">Default</option>
+                         <option value="Dark">Dark</option>
+                     </select>
+                 </label>
+             </div>
+             <div class="ngx-toolbar-action ngx-toolbar-action-background-color">
+                 <label class="ngx-toolbar-label">
+                     <span class="ngx-toolbar-label-text">
+                         <i class="ngx-icon ngx-icon-color"></i>
+                         Backgropund color:
+                     </span>
+                     <input class="ngx-component-example-color-picker" type="color" id="head" name="head" [(ngModel)]="exampleBackgroundColor" />
+                 </label>
+                 <button class="ngx-component-example-button" (click)="exampleBackgroundColor = '#ffffff'">White</button>
+                 <button class="ngx-component-example-button" (click)="exampleBackgroundColor = '#dddddd'">Grey</button>
+             </div>
+             <div class="ngx-toolbar-action ngx-toolbar-action-cog">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings-icon lucide-settings">
+                    <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
+                    <circle cx="12" cy="12" r="3"/>
+                </svg>
+             </div>
+        </div>
+    </div>
+
+    <div [ngStyle]="{'background-color': exampleBackgroundColor}" class="ngx-component-example-content" [ngClass]="{'direction-rtl': isRtl}">
+        <ng-content></ng-content>
+    </div>
+</div>

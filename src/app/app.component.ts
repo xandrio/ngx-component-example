@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NgxComponentExampleComponent } from '../../projects/ngx-component-example/src/public-api';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [ NgxComponentExampleComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

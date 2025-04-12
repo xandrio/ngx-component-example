@@ -1,27 +1,52 @@
 :host {
-    --ngx-component-example-background-color: #f0f0f0;
+    // Colors
+    --ngx-component-example-white-color: #ffffff;
+    --ngx-component-example-background-color: #605d86;
+    --ngx-component-example-background-color-light: #f3f4f6;
+    --ngx-component-example-background-color-dark: #1f2937;
+    --ngx-component-example-background-color-dark-light: #374151;
+    --ngx-component-example-text-color: #111827;
+    --ngx-component-example-text-color-light: #6b7280;
+    --ngx-component-example-text-color-dark: #f3f4f6;
     --ngx-component-example-primary-color: #007bff;
     --ngx-component-example-secondary-color: #6c757d;
     --ngx-component-example-success-color: #28a745;
+    --ngx-component-example-violet-color: #6e2afa;
+    --ngx-component-example-danger-color: #dc3545;
+    --ngx-component-example-transparent-color: rgba(0, 0, 0, 0);
+    --ngx-component-example-violet-rgb: 110,42,250;
+    --ngx-component-example-default-gradient: linear-gradient(rgba(var(--ngx-component-example-violet-rgb), 1), rgba(var(--ngx-component-example-violet-rgb), 0.95));
+    // Sizes
     --ngx-component-example-default-step-size: 4px;
     --ngx-component-example-default-bordere-size: 1px;
+    --ngx-component-example-large-border-size: 2px;
+    --ngx-component-example-buttons-border: var(  --ngx-component-example-default-bordere-size) solid var(--ngx-component-example-background-color-light);
     --ngx-component-example-default-border-radius: calc(var(--ngx-component-example-default-step-size) * 2);
+    --ngx-component-example-small-border-radius: var(--ngx-component-example-default-step-size);
     --ngx-component-example-default-border: var(--ngx-component-example-default-bordere-size) solid var(--ngx-component-example-secondary-color);
     --ngx-component-example-double-step-size: calc(var(--ngx-component-example-default-step-size) * 2);
     --ngx-component-example-triple-step-size: calc(var(--ngx-component-example-default-step-size) * 3);
     --ngx-component-example-quadriple-step-size: calc(var(--ngx-component-example-default-step-size) * 4);
     --ngx-component-example-quintuple-step-size: calc(var(--ngx-component-example-default-step-size) * 5);
     --ngx-component-example-default-padding-size: 16px;
+    //Fonts
     --ngx-component-example-default-font-family: 'Roboto', sans-serif;
     --ngx-component-example-default-font-size: 16px;
     --ngx-component-example-default-font-weight: 400;
-    --ngx-component-example-default-font-color: #111827;
+    --ngx-component-example-default-font-color: var(--ngx-component-example-text-color);
     --ngx-component-example-default-font-size-small: 14px;
     --ngx-component-example-default-font-weight-small: 300;
-    --ngx-component-example-default-font-color-small: #6b7280;
+    --ngx-component-example-default-font-color-small: var(--ngx-component-example-text-color-light);
     --ngx-component-example-default-font-size-large: 18px;
     --ngx-component-example-default-font-weight-large: 500;
-    --ngx-component-example-default-font-color-large: #374151;
+    --ngx-component-example-default-font-color-large: var(--ngx-component-example-background-color-dark-light);
+    //Animations
+    --ngx-component-example-default-animation-duration: 0.5s;
+    --ngx-component-example-quick-animation-duration: 0.15s;
+    --ngx-component-example-default-animation-type: ease-out;
+    --ngx-component-example-default-animation: var(--ngx-component-example-default-animation-duration) var(--ngx-component-example-default-animation-type);
+
+    
 }
 
 .ngx-component-example {
@@ -34,66 +59,129 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--ngx-component-example-default-padding-size);
-    background-color: var(--ngx-component-example-background-color);
+    padding: var(--ngx-component-example-double-step-size) var(--ngx-component-example-default-padding-size);
+    background-image: var(--ngx-component-example-default-gradient);
+    color: var(--ngx-component-example-text-color-dark);
     border-top-left-radius: var(--ngx-component-example-default-border-radius);
     border-top-right-radius: var(--ngx-component-example-default-border-radius);
+    transition: border-radius var(--ngx-component-example-quick-animation-duration) var(--ngx-component-example-default-animation-type);
 
     .ngx-toolbar-title {
         display: flex;
         align-items: center;
         
         .ngx-toolbar-expand-collapse {
+            background-color: var(--ngx-component-example-transparent-color);
             margin-right: var(--ngx-component-example-double-step-size);
         }
 
         .ngx-toolbar-title-text {
+            max-width: 400px;
             font-size: var(--ngx-component-example-default-font-size);
-            color: var(--ngx-component-example-default-font-color-small);
             font-weight: var(--ngx-component-example-default-font-weight-small);
+            color: var(--ngx-component-example-text-color-dark);
             margin: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
         }
     }
 
     .ngx-toolbar-actions {
         display: flex;
         align-items: center;
+        overflow: hidden;
+        max-width: 1000px;
+        transition: max-width var(--ngx-component-example-default-animation-duration) var(--ngx-component-example-default-animation-type);
 
-        .ngx-toolbar-action {
+        .ngx-toolbar-action-cog {
+            color: var(--ngx-component-example-text-color-dark);
+            transition: marging-right var(--ngx-component-example-default-animation);
+        }
+
+        .ngx-toolbar-actions-collapsed-wrapper {
             display: flex;
             align-items: center;
-    
-            .ngx-toolbar-label {
+            overflow: hidden;
+            max-width: 0;
+            transition: max-width var(--ngx-component-example-default-animation);
+
+            .ngx-toolbar-action {
                 display: flex;
                 align-items: center;
-    
-                .ngx-toolbar-label-text {
-                    margin-right: var(--ngx-component-example-double-step-size);
-                    color: var(--ngx-component-example-default-font-color-small);
+
+                .ngx-toolbar-label {
+                    display: flex;
+                    align-items: center;
+        
+                    .ngx-toolbar-label-text {
+                        margin-right: var(--ngx-component-example-double-step-size);
+                        color: var(--ngx-component-example-text-color-dark);
+                        white-space: nowrap;
+                    }
+                }
+
+                &:first-child {
+                    margin-left: var(--ngx-component-example-double-step-size);
+                }
+            }
+
+            .ngx-toolbar-action:not(:last-child) {
+                position: relative;
+                margin-right: var(--ngx-component-example-triple-step-size);
+                padding-right: var(--ngx-component-example-triple-step-size);
+
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: var(--ngx-component-example-default-bordere-size);
+                    height: var(--ngx-component-example-triple-step-size);
+                    background-color: var(--ngx-component-example-secondary-color);
                 }
             }
         }
-    
-        .ngx-toolbar-action:not(:last-child) {
-            position: relative;
-            margin-right: var(--ngx-component-example-triple-step-size);
-            padding-right: var(--ngx-component-example-triple-step-size);
-            &::after {
-                content: '';
-                display: block;
-                position: absolute;
-                right: 0;
-                top: 50%;
-                transform: translateY(-50%);
-                width: var(--ngx-component-example-default-bordere-size);
-                height: var(--ngx-component-example-triple-step-size);
-                background-color: var(--ngx-component-example-secondary-color);
+
+        &.ngx-toolbar-actions-pinned,
+        &:hover {
+
+            .ngx-toolbar-actions-collapsed-wrapper {
+                max-width: 1000px !important;
+            }
+
+            .ngx-toolbar-action:not(:last-child) {
+                &::after {
+                    display: block;
+                }
             }
         }
     }
-    
   }
 
+  
+  &.ngx-component-example-collapsed {
+    .ngx-component-example-toolbar {
+        border-bottom-left-radius: var(--ngx-component-example-default-border-radius);
+        border-bottom-right-radius: var(--ngx-component-example-default-border-radius);
+
+        .ngx-toolbar-actions {
+            max-width: 0;
+        }
+    }
+  }
+
+  .ngx-component-example-content-animation-frame {
+    max-height: 10000px;
+    &.ngx-component-example-content-animation-frame-collapsed {
+        max-height: 0;
+        overflow: hidden;
+      }    
+  }
+  
   .ngx-component-example-content {
     padding: var(--ngx-component-example-default-padding-size);
     border-bottom-left-radius: var(--ngx-component-example-default-border-radius);
@@ -111,6 +199,11 @@
     margin: 0;
     width: var(--ngx-component-example-quadriple-step-size);
     height: var(--ngx-component-example-quadriple-step-size);
+    &:checked {
+        accent-color: var(--ngx-component-example-violet-color);
+        background-color: var(--ngx-component-example-violet-color);
+        outline: var(--ngx-component-example-default-bordere-size) solid var(--ngx-component-example-white-color);
+    }
   }
 
   .direction-rtl {
@@ -123,22 +216,77 @@
         margin-right: var(--ngx-component-example-double-step-size);
     }
 
+    .ngx-component-example-color-picker {
+        padding: var(--ngx-component-example-default-step-size);
+    }
+
+    .ngx-component-example-color-picker,
     .ngx-component-example-button {
-        padding: var(--ngx-component-example-default-step-size) var(--ngx-component-example-double-step-size);
+        background-color: var(--ngx-component-example-transparent-color);
+        color: var(--ngx-component-example-text-color-dark);
+        border: var(--ngx-component-example-buttons-border);
+        border-radius: var(--ngx-component-example-small-border-radius);
+    }
+    .ngx-component-example-button {
+        display: flex;
+        align-items: center;
+        padding: var(--ngx-component-example-double-step-size);
         font-size: var(--ngx-component-example-default-font-size-small);
         font-weight: var(--ngx-component-example-default-font-weight-small);
-        color: var(--ngx-component-example-default-font-color);
     }
+    
+    .ngx-component-example-color-circle {
+        display: inline-block;
+        width: var(--ngx-component-example-double-step-size);
+        height: var(--ngx-component-example-double-step-size);
+        border-radius: 50%;
+        // margin-right: var(--ngx-component-example-double-step-size);
+
+        &.ngx-component-example-color-transparent {
+            position: relative;
+            &::after {
+                display: block;
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(45deg);
+                width: 2px;
+                height: var(--ngx-component-example-triple-step-size);
+                background-color: var(--ngx-component-example-danger-color);
+                
+            }
+        }
+    }
+
+    .ngx-component-example-color-preset-text {
+        white-space: nowrap;
+    }
+  }
+  .ngx-toolbar-expand-cog,
+  .ngx-toolbar-expand-collapse {
+      display: flex;
+      padding: 0;
+      background-color: var(--ngx-component-example-transparent-color);
+      color: var(--ngx-component-example-text-color-dark);
+      border: none;
+      align-items: center;
+  }
+
+  .ngx-toolbar-expand-cog {
+    max-width: var(--ngx-component-example-quintuple-step-size);
+    max-height: var(--ngx-component-example-quintuple-step-size);
   }
 
   .ngx-toolbar-expand-collapse {
-      display: flex;
-      max-width: var(--ngx-component-example-quadriple-step-size);
-      max-height: var(--ngx-component-example-quadriple-step-size);
-      padding: 0;
-      color: var(--ngx-component-example-default-font-color-small);
-      border: none;
-      align-items: center;
-      cursor: pointer;
+    max-width: var(--ngx-component-example-quadriple-step-size);
+    max-height: var(--ngx-component-example-quadriple-step-size);
+    cursor: pointer;
+    transition: transform var(--ngx-component-example-quick-animation-duration) var(--ngx-component-example-default-animation-type);
   }
+
+  .ngx-toolbar-expand-collapse-active {
+    transform: rotate(90deg);
+  }
+
 }

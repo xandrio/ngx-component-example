@@ -1,4 +1,23 @@
+.ngx-logo {
+    max-width: 126px;
+}
+
+.ngx-logo-small {
+    max-width: 24px;
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+
+    .ngx-header-title {
+        margin-right: 18px;
+    }
+}
+
 .app-container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 18px 24px;
 }

@@ -1,7 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     font-family: 'Roboto', sans-serif;
-    color: #111827;
-    font-size: 16px;
-    line-height: 1.8;
+}
+
+
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    background-image: linear-gradient(rgb(110, 42, 250), rgba(110, 42, 250, 0.95));
+}
+
+.nav-link {
+    color: rgb(110, 42, 250);
+}
+
+.nav-link:focus, .nav-link:hover {
+    color: rgb(62, 7, 172);
 }

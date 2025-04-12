@@ -12,6 +12,9 @@
     "paths": {
       "ngx-component-example": [
         "./dist/ngx-component-example"
+      ],
+      "ngx-workspace-shared-styles": [
+        "./dist/ngx-workspace-shared-styles"
       ]
     },
     "skipLibCheck": true,

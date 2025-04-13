@@ -211,7 +211,7 @@
   }
 
   .ngx-toolbar-action-background-color {
-    .ngx-component-example-button,
+    .ngx-component-example-button:not(:last-child),
     .ngx-component-example-color-picker {
         margin-right: var(--ngx-component-example-double-step-size);
     }

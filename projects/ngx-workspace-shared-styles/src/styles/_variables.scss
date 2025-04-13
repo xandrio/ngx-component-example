@@ -1,0 +1,72 @@
+:root {
+
+// Colors
+
+--color-white: #ffffff;
+
+--color-bg: #605d86;
+--color-bg-light: #f3f4f6;
+--color-bg-dark: #1f2937;
+--color-bg-dark-light: #374151;
+
+--color-text: #111827;
+--color-text-muted: #6b7280;
+--color-text-invert: #f3f4f6;
+
+--color-primary: #007bff;
+--color-secondary: #6c757d;
+--color-success: #28a745;
+--color-danger: #dc3545;
+--color-violet: #6e2afa;
+--color-transparent: rgba(0, 0, 0, 0);
+--color-violet-rgb: 110, 42, 250;
+
+--gradient-default: linear-gradient(
+  rgba(var(--color-violet-rgb), 1),
+  rgba(var(--color-violet-rgb), 0.95)
+);
+
+// Sizing
+
+--size-step: 4px;
+--size-border: 1px;
+--size-border-lg: 2px;
+
+--border: var(--size-border) solid var(--color-secondary);
+--border-light: var(--size-border) solid var(--color-bg-light);
+--radius-sm: var(--size-step);
+--radius: calc(var(--size-step) * 2);
+
+--space-sm: var(--size-step);
+--space-md: calc(var(--size-step) * 2);
+--space-lg: calc(var(--size-step) * 3);
+--space-xl: calc(var(--size-step) * 4);
+--space-2xl: calc(var(--size-step) * 5);
+
+--padding-default: 16px;
+
+// Typography
+
+--font-family-base: 'Roboto', sans-serif;
+
+--font-size-sm: 14px;
+--font-size: 16px;
+--font-size-lg: 18px;
+
+--font-weight-light: 300;
+--font-weight-normal: 400;
+--font-weight-medium: 500;
+
+--font-color: var(--color-text);
+--font-color-muted: var(--color-text-muted);
+--font-color-strong: var(--color-bg-dark-light);
+
+// Animation
+
+--anim-duration: 0.5s;
+--anim-duration-fast: 0.15s;
+--anim-ease: ease-out;
+--anim-default: var(--anim-duration) var(--anim-ease);
+--anim-default-fast: var(--anim-duration-fast) var(--anim-ease);
+
+}
